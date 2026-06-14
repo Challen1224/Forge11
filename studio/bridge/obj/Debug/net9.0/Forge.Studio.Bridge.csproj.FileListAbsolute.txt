@@ -9,3 +9,5 @@ C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridg
 C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\refint\Forge.Studio.Bridge.dll
 C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.pdb
 C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\ref\Forge.Studio.Bridge.dll
+C:\Users\chall\Desktop\Forge11\studio\bridge\bin\Debug\net9.0\forge11_abi.dll
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.sourcelink.json
