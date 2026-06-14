@@ -3,6 +3,7 @@ add_library(forge11_core STATIC
     core/Application.cpp
     platform/win32/Win32Window.cpp
     render/Renderer.cpp
+    ui/dsl/F11Parser.cpp
 )
 
 target_include_directories(forge11_core

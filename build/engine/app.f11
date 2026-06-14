@@ -1,0 +1,6 @@
+<Window Title="Forge11 Sample" Width="800" Height="600">
+    <Panel Orientation="Vertical">
+        <Label Text="Hello, Forge11!"/>
+        <Button Name="btnSubmit" Text="Submit" Width="120" Height="32"/>
+    </Panel>
+</Window>
