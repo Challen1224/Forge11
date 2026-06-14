@@ -71,3 +71,4 @@ C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Views\MainWin
 C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Views\MainWindow.g.cs
 C:\Users\chall\Desktop\Forge11\studio\app\bin\Debug\net9.0-windows\forge11_abi.dll
 C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Forge.Studio.App.sourcelink.json
+C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Forge.Studio.App_MarkupCompile.lref
