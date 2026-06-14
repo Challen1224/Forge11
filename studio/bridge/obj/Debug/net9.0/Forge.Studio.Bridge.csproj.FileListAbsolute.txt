@@ -1,0 +1,11 @@
+C:\Users\chall\Desktop\Forge11\studio\bridge\bin\Debug\net9.0\Forge.Studio.Bridge.deps.json
+C:\Users\chall\Desktop\Forge11\studio\bridge\bin\Debug\net9.0\Forge.Studio.Bridge.dll
+C:\Users\chall\Desktop\Forge11\studio\bridge\bin\Debug\net9.0\Forge.Studio.Bridge.pdb
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.AssemblyInfoInputs.cache
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.AssemblyInfo.cs
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.csproj.CoreCompileInputs.cache
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.dll
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\refint\Forge.Studio.Bridge.dll
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\Forge.Studio.Bridge.pdb
+C:\Users\chall\Desktop\Forge11\studio\bridge\obj\Debug\net9.0\ref\Forge.Studio.Bridge.dll

@@ -1,0 +1,801 @@
+{
+  "version": 4,
+  "targets": {
+    "net9.0-windows": {
+      "AvalonEdit/6.3.1.120": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
+      "CommunityToolkit.Mvvm/8.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/CommunityToolkit.Mvvm.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/CommunityToolkit.Mvvm.targets": {}
+        }
+      },
+      "Dirkster.AvalonDock/4.74.1": {
+        "type": "package",
+        "compile": {
+          "lib/net9.0-windows7.0/AvalonDock.dll": {}
+        },
+        "runtime": {
+          "lib/net9.0-windows7.0/AvalonDock.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ],
+        "resource": {
+          "lib/net9.0-windows7.0/ca-ES/AvalonDock.resources.dll": {
+            "locale": "ca-ES"
+          },
+          "lib/net9.0-windows7.0/cs-CZ/AvalonDock.resources.dll": {
+            "locale": "cs-CZ"
+          },
+          "lib/net9.0-windows7.0/de/AvalonDock.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net9.0-windows7.0/es/AvalonDock.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net9.0-windows7.0/fr/AvalonDock.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net9.0-windows7.0/hu/AvalonDock.resources.dll": {
+            "locale": "hu"
+          },
+          "lib/net9.0-windows7.0/it/AvalonDock.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net9.0-windows7.0/ja/AvalonDock.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net9.0-windows7.0/ko/AvalonDock.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net9.0-windows7.0/nl-BE/AvalonDock.resources.dll": {
+            "locale": "nl-BE"
+          },
+          "lib/net9.0-windows7.0/pl/AvalonDock.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net9.0-windows7.0/pt/AvalonDock.resources.dll": {
+            "locale": "pt"
+          },
+          "lib/net9.0-windows7.0/ro/AvalonDock.resources.dll": {
+            "locale": "ro"
+          },
+          "lib/net9.0-windows7.0/ru/AvalonDock.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net9.0-windows7.0/sv/AvalonDock.resources.dll": {
+            "locale": "sv"
+          },
+          "lib/net9.0-windows7.0/zh-Hans/AvalonDock.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net9.0-windows7.0/zh-Hant/AvalonDock.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.Analyzers/5.3.0-2.25625.1": {
+        "type": "package",
+        "build": {
+          "buildTransitive/Microsoft.CodeAnalysis.Analyzers.props": {},
+          "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets": {}
+        }
+      },
+      "Microsoft.CodeAnalysis.Common/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "5.3.0-2.25625.1"
+        },
+        "compile": {
+          "lib/net9.0/Microsoft.CodeAnalysis.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.CodeAnalysis.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net9.0/cs/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net9.0/de/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net9.0/es/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net9.0/fr/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net9.0/it/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net9.0/ja/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net9.0/ko/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net9.0/pl/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net9.0/ru/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net9.0/tr/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.CSharp/5.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CodeAnalysis.Analyzers": "5.3.0-2.25625.1",
+          "Microsoft.CodeAnalysis.Common": "[5.3.0]"
+        },
+        "compile": {
+          "lib/net9.0/Microsoft.CodeAnalysis.CSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net9.0/Microsoft.CodeAnalysis.CSharp.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "resource": {
+          "lib/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "es"
+          },
+          "lib/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "it"
+          },
+          "lib/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Forge.Studio.Bridge/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/Forge.Studio.Bridge.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Forge.Studio.Bridge.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "AvalonEdit/6.3.1.120": {
+      "sha512": "6ASBKPzAg64BLDlFOJo4Ypr1sA/6hB5+TfHLJaZYUSTE0jgxvKlVqKeo/ISTG9qEMxu604qUu6BGugmJkfdrNw==",
+      "type": "package",
+      "path": "avalonedit/6.3.1.120",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "PackageReadme.md",
+        "avalonedit.6.3.1.120.nupkg.sha512",
+        "avalonedit.nuspec",
+        "images/AvalonEditNuGetPackageIcon.png",
+        "lib/net462/ICSharpCode.AvalonEdit.dll",
+        "lib/net462/ICSharpCode.AvalonEdit.xml",
+        "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.dll",
+        "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.xml",
+        "lib/net8.0-windows7.0/ICSharpCode.AvalonEdit.dll",
+        "lib/net8.0-windows7.0/ICSharpCode.AvalonEdit.xml"
+      ]
+    },
+    "CommunityToolkit.Mvvm/8.4.2": {
+      "sha512": "WadCzGEc2U+3e20avRLng4qNtt4zoOGWrdUISqJWrHe3/FSnrYjuM5Sb4yQb09LhkBXrrI4Zt3dLKgRMbItsrg==",
+      "type": "package",
+      "path": "communitytoolkit.mvvm/8.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.12/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.12/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn4.3/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "analyzers/dotnet/roslyn5.0/cs/CommunityToolkit.Mvvm.CodeFixers.dll",
+        "analyzers/dotnet/roslyn5.0/cs/CommunityToolkit.Mvvm.SourceGenerators.dll",
+        "build/CommunityToolkit.Mvvm.FeatureSwitches.targets",
+        "build/CommunityToolkit.Mvvm.SourceGenerators.targets",
+        "build/CommunityToolkit.Mvvm.Windows.targets",
+        "build/CommunityToolkit.Mvvm.WindowsSdk.targets",
+        "build/CommunityToolkit.Mvvm.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.FeatureSwitches.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.SourceGenerators.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.Windows.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.WindowsSdk.targets",
+        "buildTransitive/CommunityToolkit.Mvvm.targets",
+        "communitytoolkit.mvvm.8.4.2.nupkg.sha512",
+        "communitytoolkit.mvvm.nuspec",
+        "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll",
+        "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.xml",
+        "lib/net8.0/CommunityToolkit.Mvvm.dll",
+        "lib/net8.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.0/CommunityToolkit.Mvvm.xml",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.dll",
+        "lib/netstandard2.1/CommunityToolkit.Mvvm.xml"
+      ]
+    },
+    "Dirkster.AvalonDock/4.74.1": {
+      "sha512": "Wf3tjZmN8cjepp5m3dlI68TzDGBnkbxLmbdGD4BkgmbpTPHC0SUSiCTI/BY55KFwWXov714DDbebSCUnl2w97Q==",
+      "type": "package",
+      "path": "dirkster.avalondock/4.74.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "dirkster.avalondock.4.74.1.nupkg.sha512",
+        "dirkster.avalondock.nuspec",
+        "lib/net10.0-windows7.0/AvalonDock.dll",
+        "lib/net10.0-windows7.0/ca-ES/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/cs-CZ/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/de/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/es/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/fr/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/hu/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/it/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/ja/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/ko/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/nl-BE/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/pl/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/pt/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/ro/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/ru/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/sv/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/zh-Hans/AvalonDock.resources.dll",
+        "lib/net10.0-windows7.0/zh-Hant/AvalonDock.resources.dll",
+        "lib/net40/AvalonDock.dll",
+        "lib/net40/ca-ES/AvalonDock.resources.dll",
+        "lib/net40/cs-CZ/AvalonDock.resources.dll",
+        "lib/net40/de/AvalonDock.resources.dll",
+        "lib/net40/es/AvalonDock.resources.dll",
+        "lib/net40/fr/AvalonDock.resources.dll",
+        "lib/net40/hu/AvalonDock.resources.dll",
+        "lib/net40/it/AvalonDock.resources.dll",
+        "lib/net40/ja/AvalonDock.resources.dll",
+        "lib/net40/ko/AvalonDock.resources.dll",
+        "lib/net40/nl-BE/AvalonDock.resources.dll",
+        "lib/net40/pl/AvalonDock.resources.dll",
+        "lib/net40/pt/AvalonDock.resources.dll",
+        "lib/net40/ro/AvalonDock.resources.dll",
+        "lib/net40/ru/AvalonDock.resources.dll",
+        "lib/net40/sv/AvalonDock.resources.dll",
+        "lib/net40/zh-Hans/AvalonDock.resources.dll",
+        "lib/net40/zh-Hant/AvalonDock.resources.dll",
+        "lib/net48/AvalonDock.dll",
+        "lib/net48/ca-ES/AvalonDock.resources.dll",
+        "lib/net48/cs-CZ/AvalonDock.resources.dll",
+        "lib/net48/de/AvalonDock.resources.dll",
+        "lib/net48/es/AvalonDock.resources.dll",
+        "lib/net48/fr/AvalonDock.resources.dll",
+        "lib/net48/hu/AvalonDock.resources.dll",
+        "lib/net48/it/AvalonDock.resources.dll",
+        "lib/net48/ja/AvalonDock.resources.dll",
+        "lib/net48/ko/AvalonDock.resources.dll",
+        "lib/net48/nl-BE/AvalonDock.resources.dll",
+        "lib/net48/pl/AvalonDock.resources.dll",
+        "lib/net48/pt/AvalonDock.resources.dll",
+        "lib/net48/ro/AvalonDock.resources.dll",
+        "lib/net48/ru/AvalonDock.resources.dll",
+        "lib/net48/sv/AvalonDock.resources.dll",
+        "lib/net48/zh-Hans/AvalonDock.resources.dll",
+        "lib/net48/zh-Hant/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/AvalonDock.dll",
+        "lib/net5.0-windows7.0/ca-ES/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/cs-CZ/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/de/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/es/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/fr/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/hu/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/it/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/ja/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/ko/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/nl-BE/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/pl/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/pt/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/ro/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/ru/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/sv/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/zh-Hans/AvalonDock.resources.dll",
+        "lib/net5.0-windows7.0/zh-Hant/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/AvalonDock.dll",
+        "lib/net9.0-windows7.0/ca-ES/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/cs-CZ/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/de/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/es/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/fr/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/hu/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/it/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/ja/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/ko/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/nl-BE/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/pl/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/pt/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/ro/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/ru/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/sv/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/zh-Hans/AvalonDock.resources.dll",
+        "lib/net9.0-windows7.0/zh-Hant/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/AvalonDock.dll",
+        "lib/netcoreapp3.0/ca-ES/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/cs-CZ/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/de/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/es/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/fr/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/hu/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/it/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/ja/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/ko/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/nl-BE/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/pl/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/pt/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/ro/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/ru/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/sv/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/zh-Hans/AvalonDock.resources.dll",
+        "lib/netcoreapp3.0/zh-Hant/AvalonDock.resources.dll"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Analyzers/5.3.0-2.25625.1": {
+      "sha512": "4Yhh2fnu3G+J0J1lDc8WZVgMjgbynSeTfkl5IFJMFrmiIO0sc7Tjx+f3sFVV8Sd35PrIUWfof0RWc3lAMl7Azg==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.analyzers/5.3.0-2.25625.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.Analyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.Analyzers.dll",
+        "analyzers/dotnet/cs/cs/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/de/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/es/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/fr/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/it/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ja/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ko/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pl/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/ru/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/tr/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/zh-Hans/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/cs/zh-Hant/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.Analyzers.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.Analyzers.dll",
+        "analyzers/dotnet/vb/cs/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/de/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/es/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/fr/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/it/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/ja/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/ko/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/pl/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/pt-BR/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/ru/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/tr/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/zh-Hans/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "analyzers/dotnet/vb/zh-Hant/Microsoft.CodeAnalysis.Analyzers.resources.dll",
+        "buildTransitive/Microsoft.CodeAnalysis.Analyzers.props",
+        "buildTransitive/Microsoft.CodeAnalysis.Analyzers.targets",
+        "documentation/Microsoft.CodeAnalysis.Analyzers.md",
+        "documentation/Microsoft.CodeAnalysis.Analyzers.sarif",
+        "documentation/readme.md",
+        "editorconfig/AllRulesDefault/.editorconfig",
+        "editorconfig/AllRulesDisabled/.editorconfig",
+        "editorconfig/AllRulesEnabled/.editorconfig",
+        "editorconfig/CorrectnessRulesDefault/.editorconfig",
+        "editorconfig/CorrectnessRulesEnabled/.editorconfig",
+        "editorconfig/DataflowRulesDefault/.editorconfig",
+        "editorconfig/DataflowRulesEnabled/.editorconfig",
+        "editorconfig/LibraryRulesDefault/.editorconfig",
+        "editorconfig/LibraryRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisCompatibilityRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisCompatibilityRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisCorrectnessRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisCorrectnessRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisDesignRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisDesignRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisDocumentationRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisDocumentationRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisLocalizationRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisLocalizationRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisPerformanceRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisPerformanceRulesEnabled/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisReleaseTrackingRulesDefault/.editorconfig",
+        "editorconfig/MicrosoftCodeAnalysisReleaseTrackingRulesEnabled/.editorconfig",
+        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
+        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
+        "microsoft.codeanalysis.analyzers.5.3.0-2.25625.1.nupkg.sha512",
+        "microsoft.codeanalysis.analyzers.nuspec",
+        "rulesets/AllRulesDefault.ruleset",
+        "rulesets/AllRulesDisabled.ruleset",
+        "rulesets/AllRulesEnabled.ruleset",
+        "rulesets/CorrectnessRulesDefault.ruleset",
+        "rulesets/CorrectnessRulesEnabled.ruleset",
+        "rulesets/DataflowRulesDefault.ruleset",
+        "rulesets/DataflowRulesEnabled.ruleset",
+        "rulesets/LibraryRulesDefault.ruleset",
+        "rulesets/LibraryRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisCompatibilityRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisCompatibilityRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisCorrectnessRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisCorrectnessRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisDesignRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisDesignRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisDocumentationRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisDocumentationRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisLocalizationRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisLocalizationRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisPerformanceRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisPerformanceRulesEnabled.ruleset",
+        "rulesets/MicrosoftCodeAnalysisReleaseTrackingRulesDefault.ruleset",
+        "rulesets/MicrosoftCodeAnalysisReleaseTrackingRulesEnabled.ruleset",
+        "rulesets/PortedFromFxCopRulesDefault.ruleset",
+        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.CodeAnalysis.Common/5.3.0": {
+      "sha512": "uC0qk3jzTQY7i90ehfnCqaOZpBUGJyPMiHJ3c0jOb8yaPBjWzIhVdNxPbeVzI74DB0C+YgBKPLqUkgFZzua5Mg==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.common/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "ThirdPartyNotices.rtf",
+        "lib/net10.0/Microsoft.CodeAnalysis.dll",
+        "lib/net10.0/Microsoft.CodeAnalysis.pdb",
+        "lib/net10.0/Microsoft.CodeAnalysis.xml",
+        "lib/net10.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/Microsoft.CodeAnalysis.dll",
+        "lib/net8.0/Microsoft.CodeAnalysis.pdb",
+        "lib/net8.0/Microsoft.CodeAnalysis.xml",
+        "lib/net8.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net8.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/Microsoft.CodeAnalysis.dll",
+        "lib/net9.0/Microsoft.CodeAnalysis.pdb",
+        "lib/net9.0/Microsoft.CodeAnalysis.xml",
+        "lib/net9.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.dll",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.pdb",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.xml",
+        "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/de/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/es/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/it/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "microsoft.codeanalysis.common.5.3.0.nupkg.sha512",
+        "microsoft.codeanalysis.common.nuspec"
+      ]
+    },
+    "Microsoft.CodeAnalysis.CSharp/5.3.0": {
+      "sha512": "SQFNGQF4f7UfDXKxMzzGNMr3fjrPDIjLfmRvvVgDCw+dyvEHDaRfHuKA5q0Pr0/JW0Gcw89TxrxrS/MjwBvluQ==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.csharp/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "ThirdPartyNotices.rtf",
+        "lib/net10.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net10.0/Microsoft.CodeAnalysis.CSharp.pdb",
+        "lib/net10.0/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net8.0/Microsoft.CodeAnalysis.CSharp.pdb",
+        "lib/net8.0/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net8.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/net9.0/Microsoft.CodeAnalysis.CSharp.pdb",
+        "lib/net9.0/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/net9.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/net9.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.pdb",
+        "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.xml",
+        "lib/netstandard2.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "lib/netstandard2.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "microsoft.codeanalysis.csharp.5.3.0.nupkg.sha512",
+        "microsoft.codeanalysis.csharp.nuspec"
+      ]
+    },
+    "Forge.Studio.Bridge/1.0.0": {
+      "type": "project",
+      "path": "../bridge/Forge.Studio.Bridge.csproj",
+      "msbuildProject": "../bridge/Forge.Studio.Bridge.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net9.0-windows": [
+      "AvalonEdit >= 6.3.1.120",
+      "CommunityToolkit.Mvvm >= 8.4.2",
+      "Dirkster.AvalonDock >= 4.74.1",
+      "Forge.Studio.Bridge >= 1.0.0",
+      "Microsoft.CodeAnalysis.CSharp >= 5.3.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\chall\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\chall\\Desktop\\Forge11\\studio\\app\\Forge.Studio.App.csproj",
+      "projectName": "Forge.Studio.App",
+      "projectPath": "C:\\Users\\chall\\Desktop\\Forge11\\studio\\app\\Forge.Studio.App.csproj",
+      "packagesPath": "C:\\Users\\chall\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chall\\Desktop\\Forge11\\studio\\app\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\chall\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net9.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net9.0-windows": {
+          "framework": "net9.0-windows7.0",
+          "targetAlias": "net9.0-windows",
+          "projectReferences": {
+            "C:\\Users\\chall\\Desktop\\Forge11\\studio\\bridge\\Forge.Studio.Bridge.csproj": {
+              "projectPath": "C:\\Users\\chall\\Desktop\\Forge11\\studio\\bridge\\Forge.Studio.Bridge.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.300"
+    },
+    "frameworks": {
+      "net9.0-windows": {
+        "framework": "net9.0-windows7.0",
+        "targetAlias": "net9.0-windows",
+        "dependencies": {
+          "AvalonEdit": {
+            "target": "Package",
+            "version": "[6.3.1.120, )"
+          },
+          "CommunityToolkit.Mvvm": {
+            "target": "Package",
+            "version": "[8.4.2, )"
+          },
+          "Dirkster.AvalonDock": {
+            "target": "Package",
+            "version": "[4.74.1, )"
+          },
+          "Microsoft.CodeAnalysis.CSharp": {
+            "target": "Package",
+            "version": "[5.3.0, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[9.0.16, 9.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[9.0.16, 9.0.16]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[9.0.16, 9.0.16]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[9.0.16, 9.0.16]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

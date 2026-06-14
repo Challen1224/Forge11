@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "7FWOinhCm90=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chall\\Desktop\\Forge11\\studio\\bridge\\Forge.Studio.Bridge.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.16\\microsoft.netcore.app.ref.9.0.16.nupkg.sha512",
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.16\\microsoft.windowsdesktop.app.ref.9.0.16.nupkg.sha512",
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.16\\microsoft.aspnetcore.app.ref.9.0.16.nupkg.sha512"
+  ],
+  "logs": []
+}

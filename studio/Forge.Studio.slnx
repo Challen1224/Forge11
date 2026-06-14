@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/app/">
+    <Project Path="app/Forge.Studio.App.csproj" />
+  </Folder>
+  <Folder Name="/bridge/">
+    <Project Path="bridge/Forge.Studio.Bridge.csproj" />
+  </Folder>
+</Solution>
