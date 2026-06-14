@@ -1,0 +1,23 @@
+# ninja log v7
+17	537	8031744807229849	engine/CMakeFiles/forge11_core.dir/core/Application.cpp.obj.ddi	f1b83ad6557e144f
+51	552	8031744807582483	engine/CMakeFiles/forge11_abi.dir/abi/forge11_abi.cpp.obj.ddi	6c1d79763f966373
+63	945	8031744807688279	engine/CMakeFiles/hello_window.dir/__/samples/hello_window/main.cpp.obj.ddi	a356c6d56314e8b6
+36	1435	8031744807420625	engine/CMakeFiles/forge11_core.dir/platform/win32/Win32Window.cpp.obj.ddi	1151f536a33c39ab
+553	1446	8031744820542432	engine/CMakeFiles/forge11_abi.dir/CXX.dd	24ad43e764f55544
+553	1446	8031744820542432	engine/CMakeFiles/forge11_abi.dir/CXXModules.json	24ad43e764f55544
+553	1446	8031744820542432	engine/CMakeFiles/forge11_abi.dir/abi/forge11_abi.cpp.obj.modmap	24ad43e764f55544
+945	1816	8031744825051545	engine/CMakeFiles/hello_window.dir/CXX.dd	7d1d833ede6fd08a
+945	1816	8031744825051545	engine/CMakeFiles/hello_window.dir/CXXModules.json	7d1d833ede6fd08a
+945	1816	8031744825051545	engine/CMakeFiles/hello_window.dir/__/samples/hello_window/main.cpp.obj.modmap	7d1d833ede6fd08a
+1436	2262	8031744829314410	engine/CMakeFiles/forge11_core.dir/CXX.dd	c77620e11cff8654
+1436	2262	8031744829314410	engine/CMakeFiles/forge11_core.dir/CXXModules.json	c77620e11cff8654
+1436	2262	8031744829314410	engine/CMakeFiles/forge11_core.dir/core/Application.cpp.obj.modmap	c77620e11cff8654
+1436	2262	8031744829314410	engine/CMakeFiles/forge11_core.dir/platform/win32/Win32Window.cpp.obj.modmap	c77620e11cff8654
+1465	5452	8031744821707524	engine/CMakeFiles/forge11_abi.dir/abi/forge11_abi.cpp.obj	572fff3763a95cf
+1833	5492	8031744825389063	engine/CMakeFiles/hello_window.dir/__/samples/hello_window/main.cpp.obj	b0da8b7b0953bb63
+2281	6301	8031744829866775	engine/CMakeFiles/forge11_core.dir/core/Application.cpp.obj	e29de0712378c456
+2292	7208	8031744829981081	engine/CMakeFiles/forge11_core.dir/platform/win32/Win32Window.cpp.obj	3ed4ddc7fa1c9da2
+7208	7472	8031744879132971	engine/forge11_core.lib	c259c1e25e86119a
+7472	8513	8031744891524083	engine/forge11_abi.dll	4d0d4ffe21bdc3df
+7472	8513	8031744891524083	engine/forge11_abi.lib	4d0d4ffe21bdc3df
+7490	8602	8031744881962000	engine/hello_window.exe	c3d1e3793154c74c

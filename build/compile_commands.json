@@ -1,0 +1,26 @@
+[
+{
+  "directory": "C:/Users/chall/Desktop/Forge11/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DUNICODE -D_UNICODE -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\forge11_core.dir\\core\\Application.cpp.obj.modmap /Foengine\\CMakeFiles\\forge11_core.dir\\core\\Application.cpp.obj /Fdengine\\CMakeFiles\\forge11_core.dir\\forge11_core.pdb /FS -c C:\\Users\\chall\\Desktop\\Forge11\\engine\\core\\Application.cpp",
+  "file": "C:/Users/chall/Desktop/Forge11/engine/core/Application.cpp",
+  "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir/core/Application.cpp.obj"
+},
+{
+  "directory": "C:/Users/chall/Desktop/Forge11/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DUNICODE -D_UNICODE -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\forge11_core.dir\\platform\\win32\\Win32Window.cpp.obj.modmap /Foengine\\CMakeFiles\\forge11_core.dir\\platform\\win32\\Win32Window.cpp.obj /Fdengine\\CMakeFiles\\forge11_core.dir\\forge11_core.pdb /FS -c C:\\Users\\chall\\Desktop\\Forge11\\engine\\platform\\win32\\Win32Window.cpp",
+  "file": "C:/Users/chall/Desktop/Forge11/engine/platform/win32/Win32Window.cpp",
+  "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir/platform/win32/Win32Window.cpp.obj"
+},
+{
+  "directory": "C:/Users/chall/Desktop/Forge11/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DFORGE11_BUILD_DLL -DUNICODE -D_UNICODE -Dforge11_abi_EXPORTS -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\forge11_abi.dir\\abi\\forge11_abi.cpp.obj.modmap /Foengine\\CMakeFiles\\forge11_abi.dir\\abi\\forge11_abi.cpp.obj /Fdengine\\CMakeFiles\\forge11_abi.dir\\ /FS -c C:\\Users\\chall\\Desktop\\Forge11\\engine\\abi\\forge11_abi.cpp",
+  "file": "C:/Users/chall/Desktop/Forge11/engine/abi/forge11_abi.cpp",
+  "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_abi.dir/abi/forge11_abi.cpp.obj"
+},
+{
+  "directory": "C:/Users/chall/Desktop/Forge11/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DUNICODE -D_UNICODE -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\hello_window.dir\\__\\samples\\hello_window\\main.cpp.obj.modmap /Foengine\\CMakeFiles\\hello_window.dir\\__\\samples\\hello_window\\main.cpp.obj /Fdengine\\CMakeFiles\\hello_window.dir\\ /FS -c C:\\Users\\chall\\Desktop\\Forge11\\samples\\hello_window\\main.cpp",
+  "file": "C:/Users/chall/Desktop/Forge11/samples/hello_window/main.cpp",
+  "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/hello_window.dir/__/samples/hello_window/main.cpp.obj"
+}
+]

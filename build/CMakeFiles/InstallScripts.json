@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/chall/Desktop/Forge11/build/cmake_install.cmake",
+		"C:/Users/chall/Desktop/Forge11/build/engine/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

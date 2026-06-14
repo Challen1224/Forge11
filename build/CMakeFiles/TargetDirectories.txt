@@ -1,0 +1,7 @@
+C:/Users/chall/Desktop/Forge11/build/CMakeFiles/edit_cache.dir
+C:/Users/chall/Desktop/Forge11/build/CMakeFiles/rebuild_cache.dir
+C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir
+C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_abi.dir
+C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/hello_window.dir
+C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/edit_cache.dir
+C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,35 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "MSVC",
+	"compiler-id" : "MSVC",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Users/chall/Desktop/Forge11/build/engine",
+	"dir-cur-src" : "C:/Users/chall/Desktop/Forge11/engine",
+	"dir-top-bld" : "C:/Users/chall/Desktop/Forge11/build",
+	"dir-top-src" : "C:/Users/chall/Desktop/Forge11",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\Users\\chall\\Desktop\\Forge11\\engine\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir",
+	"sources" : 
+	{
+		"engine/CMakeFiles/forge11_core.dir/core/Application.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/chall/Desktop/Forge11/engine/core/Application.cpp"
+		},
+		"engine/CMakeFiles/forge11_core.dir/platform/win32/Win32Window.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/chall/Desktop/Forge11/engine/platform/win32/Win32Window.cpp"
+		}
+	}
+}

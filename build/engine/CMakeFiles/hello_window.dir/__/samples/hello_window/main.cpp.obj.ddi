@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "engine\\CMakeFiles\\hello_window.dir\\__\\samples\\hello_window\\main.cpp.obj",
+            "outputs": [
+                "C:\\Users\\chall\\Desktop\\Forge11\\build\\vc140.pdb",
+                "engine\\CMakeFiles\\hello_window.dir\\__\\samples\\hello_window\\main.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}

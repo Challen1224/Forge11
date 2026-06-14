@@ -65,7 +65,234 @@ build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# C:/Users/chall/Desktop/Forge11/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target forge11_core
+
+
+#############################################
+# Order-only phony target for forge11_core
+
+build cmake_object_order_depends_target_forge11_core: phony || .
+
+build engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.ddi: CXX_SCAN__forge11_core_Debug C$:\Users\chall\Desktop\Forge11\engine\core\Application.cpp || cmake_object_order_depends_target_forge11_core
+  DEFINES = -DUNICODE -D_UNICODE
+  DEP_FILE = engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.ddi
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJ_FILE = engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.ddi.i
+
+build engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj: CXX_COMPILER__forge11_core_scanned_Debug C$:\Users\chall\Desktop\Forge11\engine\core\Application.cpp | engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.modmap || cmake_object_order_depends_target_forge11_core engine\CMakeFiles\forge11_core.dir\CXX.dd
+  CONFIG = Debug
+  DEFINES = -DUNICODE -D_UNICODE
+  DYNDEP_MODULE_MAP_FILE = engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.modmap
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJECT_DIR = engine\CMakeFiles\forge11_core.dir
+  OBJECT_FILE_DIR = engine\CMakeFiles\forge11_core.dir\core
+  TARGET_COMPILE_PDB = engine\CMakeFiles\forge11_core.dir\forge11_core.pdb
+  TARGET_PDB = engine\forge11_core.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\forge11_core.dir
+  dyndep = engine/CMakeFiles/forge11_core.dir/CXX.dd
+
+build engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.ddi: CXX_SCAN__forge11_core_Debug C$:\Users\chall\Desktop\Forge11\engine\platform\win32\Win32Window.cpp || cmake_object_order_depends_target_forge11_core
+  DEFINES = -DUNICODE -D_UNICODE
+  DEP_FILE = engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.ddi
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJ_FILE = engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.ddi.i
+
+build engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj: CXX_COMPILER__forge11_core_scanned_Debug C$:\Users\chall\Desktop\Forge11\engine\platform\win32\Win32Window.cpp | engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.modmap || cmake_object_order_depends_target_forge11_core engine\CMakeFiles\forge11_core.dir\CXX.dd
+  CONFIG = Debug
+  DEFINES = -DUNICODE -D_UNICODE
+  DYNDEP_MODULE_MAP_FILE = engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.modmap
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJECT_DIR = engine\CMakeFiles\forge11_core.dir
+  OBJECT_FILE_DIR = engine\CMakeFiles\forge11_core.dir\platform\win32
+  TARGET_COMPILE_PDB = engine\CMakeFiles\forge11_core.dir\forge11_core.pdb
+  TARGET_PDB = engine\forge11_core.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\forge11_core.dir
+  dyndep = engine/CMakeFiles/forge11_core.dir/CXX.dd
+
+build engine\CMakeFiles\forge11_core.dir\CXX.dd | engine\CMakeFiles\forge11_core.dir\CXXModules.json engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.modmap engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.modmap: CXX_DYNDEP__forge11_core_Debug engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj.ddi engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj.ddi | C$:\Users\chall\Desktop\Forge11\build\engine\CMakeFiles\forge11_core.dir\CXXDependInfo.json
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target forge11_core
+
+
+#############################################
+# Link the static library engine\forge11_core.lib
+
+build engine\forge11_core.lib: CXX_STATIC_LIBRARY_LINKER__forge11_core_Debug engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
+  LINK_FLAGS = /machine:x64
+  OBJECT_DIR = engine\CMakeFiles\forge11_core.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = engine\CMakeFiles\forge11_core.dir\forge11_core.pdb
+  TARGET_FILE = engine\forge11_core.lib
+  TARGET_PDB = engine\forge11_core.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\forge11_core.dir
+
+# =============================================================================
+# Object build statements for SHARED_LIBRARY target forge11_abi
+
+
+#############################################
+# Order-only phony target for forge11_abi
+
+build cmake_object_order_depends_target_forge11_abi: phony || cmake_object_order_depends_target_forge11_core
+
+build engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.ddi: CXX_SCAN__forge11_abi_Debug C$:\Users\chall\Desktop\Forge11\engine\abi\forge11_abi.cpp || cmake_object_order_depends_target_forge11_abi
+  DEFINES = -DFORGE11_BUILD_DLL -DUNICODE -D_UNICODE -Dforge11_abi_EXPORTS
+  DEP_FILE = engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.ddi
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJ_FILE = engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.ddi.i
+
+build engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj: CXX_COMPILER__forge11_abi_scanned_Debug C$:\Users\chall\Desktop\Forge11\engine\abi\forge11_abi.cpp | engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.modmap || cmake_object_order_depends_target_forge11_abi engine\CMakeFiles\forge11_abi.dir\CXX.dd
+  CONFIG = Debug
+  DEFINES = -DFORGE11_BUILD_DLL -DUNICODE -D_UNICODE -Dforge11_abi_EXPORTS
+  DYNDEP_MODULE_MAP_FILE = engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.modmap
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJECT_DIR = engine\CMakeFiles\forge11_abi.dir
+  OBJECT_FILE_DIR = engine\CMakeFiles\forge11_abi.dir\abi
+  TARGET_COMPILE_PDB = engine\CMakeFiles\forge11_abi.dir\
+  TARGET_PDB = engine\forge11_abi.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\forge11_abi.dir
+  dyndep = engine/CMakeFiles/forge11_abi.dir/CXX.dd
+
+build engine\CMakeFiles\forge11_abi.dir\CXX.dd | engine\CMakeFiles\forge11_abi.dir\CXXModules.json engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.modmap: CXX_DYNDEP__forge11_abi_Debug engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj.ddi | C$:\Users\chall\Desktop\Forge11\build\engine\CMakeFiles\forge11_abi.dir\CXXDependInfo.json
+
+
+# =============================================================================
+# Link build statements for SHARED_LIBRARY target forge11_abi
+
+
+#############################################
+# Link the shared library engine\forge11_abi.dll
+
+build engine\forge11_abi.dll engine\forge11_abi.lib: CXX_SHARED_LIBRARY_LINKER__forge11_abi_Debug engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj | engine\forge11_core.lib || engine\forge11_core.lib
+  CONFIG = Debug
+  LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL
+  LINK_LIBRARIES = engine\forge11_core.lib  user32.lib  gdi32.lib  d3d12.lib  dxgi.lib  d3dcompiler.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = engine\CMakeFiles\forge11_abi.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  RESTAT = 1
+  TARGET_COMPILE_PDB = engine\CMakeFiles\forge11_abi.dir\
+  TARGET_FILE = engine\forge11_abi.dll
+  TARGET_IMPLIB = engine\forge11_abi.lib
+  TARGET_PDB = engine\forge11_abi.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\forge11_abi.dir
+
+# =============================================================================
+# Object build statements for EXECUTABLE target hello_window
+
+
+#############################################
+# Order-only phony target for hello_window
+
+build cmake_object_order_depends_target_hello_window: phony || cmake_object_order_depends_target_forge11_core
+
+build engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.ddi: CXX_SCAN__hello_window_Debug C$:\Users\chall\Desktop\Forge11\samples\hello_window\main.cpp || cmake_object_order_depends_target_hello_window
+  DEFINES = -DUNICODE -D_UNICODE
+  DEP_FILE = engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.ddi
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJ_FILE = engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.ddi.i
+
+build engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj: CXX_COMPILER__hello_window_scanned_Debug C$:\Users\chall\Desktop\Forge11\samples\hello_window\main.cpp | engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.modmap || cmake_object_order_depends_target_hello_window engine\CMakeFiles\hello_window.dir\CXX.dd
+  CONFIG = Debug
+  DEFINES = -DUNICODE -D_UNICODE
+  DYNDEP_MODULE_MAP_FILE = engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.modmap
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4
+  INCLUDES = -IC:\Users\chall\Desktop\Forge11\engine\include
+  OBJECT_DIR = engine\CMakeFiles\hello_window.dir
+  OBJECT_FILE_DIR = engine\CMakeFiles\hello_window.dir\__\samples\hello_window
+  TARGET_COMPILE_PDB = engine\CMakeFiles\hello_window.dir\
+  TARGET_PDB = engine\hello_window.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\hello_window.dir
+  dyndep = engine/CMakeFiles/hello_window.dir/CXX.dd
+
+build engine\CMakeFiles\hello_window.dir\CXX.dd | engine\CMakeFiles\hello_window.dir\CXXModules.json engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.modmap: CXX_DYNDEP__hello_window_Debug engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj.ddi | C$:\Users\chall\Desktop\Forge11\build\engine\CMakeFiles\hello_window.dir\CXXDependInfo.json
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target hello_window
+
+
+#############################################
+# Link the executable engine\hello_window.exe
+
+build engine\hello_window.exe: CXX_EXECUTABLE_LINKER__hello_window_Debug engine\CMakeFiles\hello_window.dir\__\samples\hello_window\main.cpp.obj | engine\forge11_core.lib || engine\forge11_core.lib
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -MDd -Zi
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = engine\forge11_core.lib  user32.lib  gdi32.lib  d3d12.lib  dxgi.lib  d3dcompiler.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = engine\CMakeFiles\hello_window.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = engine\CMakeFiles\hello_window.dir\
+  TARGET_FILE = engine\hello_window.exe
+  TARGET_IMPLIB = engine\hello_window.lib
+  TARGET_PDB = engine\hello_window.pdb
+  TARGET_SUPPORT_DIR = engine\CMakeFiles\hello_window.dir
+
+
+#############################################
+# Utility command for edit_cache
+
+build engine\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\chall\Desktop\Forge11\build\engine && "C:\Program Files\CMake\bin\cmake-gui.exe" -SC:\Users\chall\Desktop\Forge11 -BC:\Users\chall\Desktop\Forge11\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build engine\edit_cache: phony engine\CMakeFiles\edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build engine\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = C:\WINDOWS\system32\cmd.exe /C "cd /D C:\Users\chall\Desktop\Forge11\build\engine && "C:\Program Files\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Users\chall\Desktop\Forge11 -BC:\Users\chall\Desktop\Forge11\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build engine\rebuild_cache: phony engine\CMakeFiles\rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
+
+build forge11_abi: phony engine\forge11_abi.dll
+
+build forge11_abi.dll: phony engine\forge11_abi.dll
+
+build forge11_core: phony engine\forge11_core.lib
+
+build forge11_core.lib: phony engine\forge11_core.lib
+
+build hello_window: phony engine\hello_window.exe
+
+build hello_window.exe: phony engine\hello_window.exe
 
 # =============================================================================
 # Folder targets.
@@ -75,7 +302,14 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 #############################################
 # Folder: C:/Users/chall/Desktop/Forge11/build
 
-build all: phony
+build all: phony engine\all
+
+# =============================================================================
+
+#############################################
+# Folder: C:/Users/chall/Desktop/Forge11/build/engine
+
+build engine\all: phony engine\forge11_core.lib engine\forge11_abi.dll engine\hello_window.exe
 
 # =============================================================================
 # Built-in targets
@@ -84,14 +318,14 @@ build all: phony
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:\Users\chall\Desktop\Forge11\build\cmake_install.cmake: RERUN_CMAKE | C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeRCInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake C$:\Users\chall\Desktop\Forge11\CMakeLists.txt CMakeCache.txt CMakeFiles\4.3.2\CMakeCXXCompiler.cmake CMakeFiles\4.3.2\CMakeRCCompiler.cmake CMakeFiles\4.3.2\CMakeSystem.cmake
+build build.ninja C$:\Users\chall\Desktop\Forge11\build\cmake_install.cmake C$:\Users\chall\Desktop\Forge11\build\engine\cmake_install.cmake: RERUN_CMAKE | C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXCompiler.cmake.in C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXCompilerABI.cpp C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCompilerIdDetection.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCXXCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompilerABI.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompilerId.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompilerSupport.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineRCCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineSystem.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeFindBinUtils.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeNinjaFindMake.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeParseImplicitIncludeInfo.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeParseImplicitLinkInfo.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeParseLibraryArchitecture.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeRCCompiler.cmake.in C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeRCInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystem.cmake.in C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeTestCXXCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeTestCompilerCommon.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeTestRCCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\ADSP-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\ARMCC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\ARMClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\AppleClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Borland-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Clang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Clang-DetermineCompilerInternal.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Cray-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\CrayClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Diab-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Embarcadero-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Fujitsu-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\GHS-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\HP-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IAR-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Intel-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-CXX-CXXImportStd.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\NVHPC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\NVIDIA-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\OrangeC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\PGI-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\PathScale-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Renesas-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\SCO-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\TI-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\TIClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Tasking-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Watcom-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\XL-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeDetermineLinkerId.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeInspectCXXLinker.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\FeatureTesting.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-Determine-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake C$:\Users\chall\Desktop\Forge11\CMakeLists.txt C$:\Users\chall\Desktop\Forge11\engine\CMakeLists.txt CMakeCache.txt CMakeFiles\4.3.2\CMakeCXXCompiler.cmake CMakeFiles\4.3.2\CMakeRCCompiler.cmake CMakeFiles\4.3.2\CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeRCInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake C$:\Users\chall\Desktop\Forge11\CMakeLists.txt CMakeCache.txt CMakeFiles\4.3.2\CMakeCXXCompiler.cmake CMakeFiles\4.3.2\CMakeRCCompiler.cmake CMakeFiles\4.3.2\CMakeSystem.cmake: phony
+build C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXCompiler.cmake.in C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXCompilerABI.cpp C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeCompilerIdDetection.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCXXCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompilerABI.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompilerId.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineCompilerSupport.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineRCCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeDetermineSystem.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeFindBinUtils.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeNinjaFindMake.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeParseImplicitIncludeInfo.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeParseImplicitLinkInfo.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeParseLibraryArchitecture.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeRCCompiler.cmake.in C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeRCInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystem.cmake.in C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeTestCXXCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeTestCompilerCommon.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\CMakeTestRCCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\ADSP-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\ARMCC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\ARMClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\AppleClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Borland-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Clang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Clang-DetermineCompilerInternal.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Cray-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\CrayClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Diab-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Embarcadero-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Fujitsu-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\GHS-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\HP-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IAR-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Intel-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-CXX-CXXImportStd.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\NVHPC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\NVIDIA-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\OrangeC-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\PGI-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\PathScale-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Renesas-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\SCO-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\TI-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\TIClang-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Tasking-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\Watcom-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\XL-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCXXLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeCommonLinkerInformation.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeDetermineLinkerId.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\CMakeInspectCXXLinker.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Internal\FeatureTesting.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Linker\MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Linker\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-Determine-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\Windows.cmake C$:\Program$ Files\CMake\share\cmake-4.3\Modules\Platform\WindowsPaths.cmake C$:\Users\chall\Desktop\Forge11\CMakeLists.txt C$:\Users\chall\Desktop\Forge11\engine\CMakeLists.txt CMakeCache.txt CMakeFiles\4.3.2\CMakeCXXCompiler.cmake CMakeFiles\4.3.2\CMakeRCCompiler.cmake CMakeFiles\4.3.2\CMakeSystem.cmake: phony
 
 
 #############################################

@@ -1,0 +1,3 @@
+ninja_dyndep_version = 1.0
+build engine\CMakeFiles\forge11_abi.dir\abi\forge11_abi.cpp.obj: dyndep
+

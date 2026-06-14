@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "revision": 0,
+    "rules": [
+        {
+            "primary-output": "engine\\CMakeFiles\\forge11_core.dir\\core\\Application.cpp.obj",
+            "outputs": [
+                "C:\\Users\\chall\\Desktop\\Forge11\\build\\vc140.pdb",
+                "engine\\CMakeFiles\\forge11_core.dir\\core\\Application.cpp.obj.ddi"
+            ],
+            "requires": []
+        }
+    ]
+}
