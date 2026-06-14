@@ -3,3 +3,5 @@ build engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj: dyndep
 
 build engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj: dyndep
 
+build engine\CMakeFiles\forge11_core.dir\render\Renderer.cpp.obj: dyndep
+
