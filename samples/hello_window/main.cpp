@@ -74,5 +74,8 @@ int main() {
     if (!app.initialize(L"Forge11 - Hello Window", 1024, 600)) {
         return 1;
     }
+
+    app.setRootWidget(widgetTree.get(), &layout);
+
     return app.run();
 }
