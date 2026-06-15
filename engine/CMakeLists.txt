@@ -5,6 +5,7 @@ add_library(forge11_core STATIC
     render/Renderer.cpp
     ui/dsl/F11Parser.cpp
     ui/WidgetFactory.cpp
+    ui/layout/LayoutEngine.cpp
 )
 
 target_include_directories(forge11_core

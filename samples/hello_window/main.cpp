@@ -5,21 +5,25 @@
 #include "forge11/ui/widgets/Panel.h"
 #include "forge11/ui/widgets/Label.h"
 #include "forge11/ui/widgets/Button.h"
+#include "forge11/ui/layout/LayoutEngine.h"
 
 #include <iostream>
 #include <filesystem>
 
 namespace {
 
-void printWidgetTree(const forge11::ui::widgets::Widget& widget, int depth = 0) {
+void printWidgetTree(const forge11::ui::widgets::Widget& widget,
+                      const forge11::ui::layout::LayoutEngine& layout,
+                      int depth = 0) {
+    auto rect = layout.rectFor(widget);
+
     std::cout << std::string(depth * 2, ' ')
-              << widget.typeName();
+              << widget.typeName()
+              << " @(" << rect.x << "," << rect.y << ") "
+              << rect.width << "x" << rect.height;
 
     if (!widget.name().empty()) {
         std::cout << " [Name=" << widget.name() << "]";
-    }
-    if (widget.width() != 0 || widget.height() != 0) {
-        std::cout << " (" << widget.width() << "x" << widget.height() << ")";
     }
 
     if (const auto* label = dynamic_cast<const forge11::ui::widgets::Label*>(&widget)) {
@@ -35,7 +39,7 @@ void printWidgetTree(const forge11::ui::widgets::Widget& widget, int depth = 0) 
     std::cout << "\n";
 
     for (const auto& child : widget.children()) {
-        printWidgetTree(*child, depth + 1);
+        printWidgetTree(*child, layout, depth + 1);
     }
 }
 
@@ -58,8 +62,13 @@ int main() {
         return 1;
     }
 
-    std::cout << "Widget tree:\n";
-    printWidgetTree(*widgetTree);
+    forge11::ui::layout::LayoutEngine layout;
+    auto* window = dynamic_cast<forge11::ui::widgets::Window*>(widgetTree.get());
+    forge11::ui::layout::LayoutRect rootBounds{0, 0, window->width(), window->height()};
+    layout.solve(*widgetTree, rootBounds);
+
+    std::cout << "Widget tree (with layout):\n";
+    printWidgetTree(*widgetTree, layout);
 
     forge11::Application app;
     if (!app.initialize(L"Forge11 - Hello Window", 1024, 600)) {
