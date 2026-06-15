@@ -4,6 +4,7 @@ add_library(forge11_core STATIC
     platform/win32/Win32Window.cpp
     render/Renderer.cpp
     ui/dsl/F11Parser.cpp
+    ui/WidgetFactory.cpp
 )
 
 target_include_directories(forge11_core
