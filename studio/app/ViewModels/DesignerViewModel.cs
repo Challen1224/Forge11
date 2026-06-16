@@ -65,6 +65,78 @@ public partial class DesignerViewModel : ObservableObject
     }
 
     // ------------------------------------------------------------------ //
+    //  Toolbox drop → insert new node
+    // ------------------------------------------------------------------ //
+    public void InsertNode(ToolboxItem item, DesignerElement? dropTarget)
+    {
+        if (RootNodes.Count == 0) return;
+
+        var newNode = new F11TreeNode { Tag = item.Tag };
+        foreach (var kvp in item.DefaultAttributes)
+            newNode.Attributes[kvp.Key] = kvp.Value;
+
+        // Find drop target's parent panel, or fall back to first Panel child of root.
+        F11TreeNode? parent = null;
+
+        if (dropTarget != null)
+        {
+            parent = FindParentPanel(RootNodes[0], dropTarget.Node);
+        }
+
+        parent ??= FindFirstPanel(RootNodes[0]);
+        parent ??= RootNodes[0]; // last resort: root Window
+
+        parent.Children.Add(newNode);
+
+        // Serialize and reload to rebuild elements + layout.
+        XmlSource = SerializeToXml(RootNodes[0]);
+        ReloadFromXml(XmlSource);
+
+        // Auto-select the new node.
+        var newElement = Elements.FirstOrDefault(e => e.Node.Tag == item.Tag &&
+                                                       e.Node == FindNodeByRef(RootNodes[0], newNode));
+        SelectElementCommand.Execute(newElement);
+
+        StatusText = $"Inserted <{item.Tag}>";
+    }
+
+    [ObservableProperty] private string _statusText = string.Empty;
+
+    private static F11TreeNode? FindParentPanel(F11TreeNode root, F11TreeNode target)
+    {
+        foreach (var child in root.Children)
+        {
+            if (child == target && root.Tag == "Panel") return root;
+            if (child == target) return null;
+            var found = FindParentPanel(child, target);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    private static F11TreeNode? FindFirstPanel(F11TreeNode root)
+    {
+        if (root.Tag == "Panel") return root;
+        foreach (var child in root.Children)
+        {
+            var found = FindFirstPanel(child);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    private static F11TreeNode? FindNodeByRef(F11TreeNode root, F11TreeNode target)
+    {
+        if (root == target) return root;
+        foreach (var child in root.Children)
+        {
+            var found = FindNodeByRef(child, target);
+            if (found != null) return found;
+        }
+        return null;
+    }
+
+    // ------------------------------------------------------------------ //
     //  Code editor → canvas sync
     // ------------------------------------------------------------------ //
     [RelayCommand]
@@ -116,16 +188,36 @@ public partial class DesignerViewModel : ObservableObject
         var rect = solver.RectFor(node);
         Elements.Add(new DesignerElement
         {
-            Node   = node,
-            X      = rect.X,
-            Y      = rect.Y,
-            Width  = rect.Width,
+            Node = node,
+            X = rect.X,
+            Y = rect.Y,
+            Width = rect.Width,
             Height = rect.Height,
-            Fill   = BrushForTag(node.Tag),
-            Label  = node.DisplayName
+            Fill = BrushForTag(node.Tag),
+            Label = GetCanvasLabel(node)
         });
         foreach (var child in node.Children)
             AddElements(child, solver);
+    }
+
+    /// <summary>
+    /// Returns the text shown on the widget rect in the designer canvas.
+    /// Shows the human-redable content (Text/Title/Name) - not raw attribute syntax.
+    /// </summary>
+    private static string GetCanvasLabel(F11TreeNode node)
+    {
+        // Primary: show Text or Title attribute if present.
+        if (node.Attributes.TryGetValue("Text",  out var text)  && !string.IsNullOrEmpty(text))
+            return text;
+        if (node.Attributes.TryGetValue("Title", out var title) && !string.IsNullOrEmpty(title))
+            return title;
+
+        // Secondary: show Name attribute.
+        if (node.Attributes.TryGetValue("Name",  out var name)  && !string.IsNullOrEmpty(name))
+            return name;
+
+        // Fallback: just the tag.
+        return node.Tag;
     }
 
     // ------------------------------------------------------------------ //

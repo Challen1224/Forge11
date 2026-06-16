@@ -11,6 +11,7 @@ namespace Forge.Studio.App.Views;
 public partial class MainWindow : Window
 {
     private TextEditor? _xmlEditor;
+    private ToolboxItem? _draggingItem;
 
     public MainWindow()
     {
@@ -59,10 +60,7 @@ public partial class MainWindow : Window
     {
         if (VM?.ActiveDocument is not { } doc) return;
         if (_xmlEditor is null) return;
-
         doc.ApplyXmlCommand.Execute(_xmlEditor.Text);
-
-        // Sync back in case serializer reformatted.
         _xmlEditor.Text = doc.XmlSource;
     }
 
@@ -79,6 +77,36 @@ public partial class MainWindow : Window
     protected override void OnContentRendered(EventArgs e)
     {
         base.OnContentRendered(e);
+        SyncEditor();
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Toolbox drag
+    // ------------------------------------------------------------------ //
+    private void Toolbox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+    {
+        if (sender is not ListBox listBox) return;
+        if (listBox.SelectedItem is not ToolboxItem item) return;
+
+        _draggingItem = item;
+        DragDrop.DoDragDrop(listBox, item, DragDropEffects.Copy);
+        _draggingItem = null;
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Canvas drop → insert node
+    // ------------------------------------------------------------------ //
+    private void DesignerCanvas_Drop(object sender, DragEventArgs e)
+    {
+        if (VM?.ActiveDocument is not { } doc) return;
+        if (_draggingItem is null) return;
+
+        // Find which element (if any) was dropped onto.
+        DesignerElement? dropTarget = null;
+        if (e.OriginalSource is FrameworkElement { DataContext: DesignerElement el })
+            dropTarget = el;
+
+        doc.InsertNode(_draggingItem, dropTarget);
         SyncEditor();
     }
 }

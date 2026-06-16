@@ -58,7 +58,7 @@ namespace Forge.Studio.App.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Forge.Studio.App;component/views/designerview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Forge.Studio.App;V1.0.0.0;component/views/designerview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\DesignerView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

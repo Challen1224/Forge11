@@ -5,8 +5,7 @@
         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         xmlns:models="clr-namespace:Forge.Studio.App.Models"
         Title="Forge Studio"
-        Height="800"
-        Width="1280"
+        Height="800" Width="1280"
         WindowStartupLocation="CenterScreen">
 
     <Grid>
@@ -20,8 +19,7 @@
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
                 <MenuItem Header="_New Project"/>
-                <MenuItem Header="_Open .f11 Layout..."
-                        Command="{Binding OpenFileCommand}"/>
+                <MenuItem Header="_Open .f11 Layout..." Command="{Binding OpenFileCommand}"/>
                 <Separator/>
                 <MenuItem Header="E_xit"/>
             </MenuItem>
@@ -40,8 +38,7 @@
 
                         <!-- LEFT: Solution Explorer + Toolbox -->
                         <avalonDock:LayoutAnchorablePane DockWidth="220">
-                            <avalonDock:LayoutAnchorable Title="Solution Explorer"
-                                    CanClose="False">
+                            <avalonDock:LayoutAnchorable Title="Solution Explorer" CanClose="False">
                                 <TreeView ItemsSource="{Binding ActiveDocument.RootNodes}"
                                           SelectedItemChanged="TreeView_SelectedItemChanged">
                                     <TreeView.Resources>
@@ -53,10 +50,27 @@
                                 </TreeView>
                             </avalonDock:LayoutAnchorable>
 
-                            <avalonDock:LayoutAnchorable Title="Toolbox"
-                                    CanClose="False">
-                                <TextBlock Text="Toolbox (Forge11 widgets)"
-                                        Margin="8"/>
+                            <avalonDock:LayoutAnchorable Title="Toolbox" CanClose="False">
+                                <ListBox ItemsSource="{Binding Toolbox.Items}"
+                                         PreviewMouseLeftButtonDown="Toolbox_PreviewMouseLeftButtonDown"
+                                         Background="#2D2D30"
+                                         BorderThickness="0">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal" Margin="4,6">
+                                                <TextBlock Text="{Binding Icon}"
+                                                           FontSize="16"
+                                                           Width="24"
+                                                           VerticalAlignment="Center"/>
+                                                <TextBlock Text="{Binding DisplayName}"
+                                                           Foreground="#D4D4D4"
+                                                           FontSize="13"
+                                                           Margin="6,0,0,0"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
 
@@ -64,13 +78,14 @@
                         <avalonDock:LayoutDocumentPane>
 
                             <!-- DESIGNER tab -->
-                            <avalonDock:LayoutDocument Title="Designer"
-                                    CanClose="False">
+                            <avalonDock:LayoutDocument Title="Designer" CanClose="False">
                                 <avalonDock:LayoutDocument.Content>
                                     <ContentControl DataContext="{Binding ActiveDocument}">
                                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
                                                       VerticalScrollBarVisibility="Auto">
-                                            <ItemsControl ItemsSource="{Binding Elements}">
+                                            <ItemsControl ItemsSource="{Binding Elements}"
+                                                          AllowDrop="True"
+                                                          Drop="DesignerCanvas_Drop">
                                                 <ItemsControl.ItemsPanel>
                                                     <ItemsPanelTemplate>
                                                         <Canvas Background="#1A1A24"
@@ -80,10 +95,8 @@
                                                 </ItemsControl.ItemsPanel>
                                                 <ItemsControl.ItemContainerStyle>
                                                     <Style TargetType="ContentPresenter">
-                                                        <Setter Property="Canvas.Left"
-                                                                Value="{Binding X}"/>
-                                                        <Setter Property="Canvas.Top"
-                                                                Value="{Binding Y}"/>
+                                                        <Setter Property="Canvas.Left" Value="{Binding X}"/>
+                                                        <Setter Property="Canvas.Top"  Value="{Binding Y}"/>
                                                     </Style>
                                                 </ItemsControl.ItemContainerStyle>
                                                 <ItemsControl.ItemTemplate>
@@ -112,8 +125,7 @@
                             </avalonDock:LayoutDocument>
 
                             <!-- CODE tab -->
-                            <avalonDock:LayoutDocument Title="Code"
-                                    CanClose="False">
+                            <avalonDock:LayoutDocument Title="Code" CanClose="False">
                                 <avalonDock:LayoutDocument.Content>
                                     <ContentControl DataContext="{Binding ActiveDocument}">
                                         <Grid>
@@ -133,7 +145,6 @@
                                                 Foreground="#D4D4D4"
                                                 Loaded="XmlEditor_Loaded"/>
 
-                                            <!-- Apply button -->
                                             <Button Grid.Row="1"
                                                     Content="Apply (reload canvas)"
                                                     Margin="4"
@@ -141,7 +152,6 @@
                                                     HorizontalAlignment="Left"
                                                     Click="ApplyXml_Click"/>
 
-                                            <!-- Error display -->
                                             <TextBlock Grid.Row="2"
                                                        Text="{Binding XmlError}"
                                                        Foreground="Red"
@@ -157,8 +167,7 @@
 
                         <!-- RIGHT: Properties -->
                         <avalonDock:LayoutAnchorablePane DockWidth="260">
-                            <avalonDock:LayoutAnchorable Title="Properties"
-                                    CanClose="False">
+                            <avalonDock:LayoutAnchorable Title="Properties" CanClose="False">
                                 <ItemsControl ItemsSource="{Binding ActiveDocument.Properties}"
                                               Margin="4">
                                     <ItemsControl.ItemTemplate>
@@ -186,15 +195,11 @@
 
                     <!-- BOTTOM: Output + Error List -->
                     <avalonDock:LayoutAnchorablePane DockHeight="180">
-                        <avalonDock:LayoutAnchorable Title="Output"
-                                CanClose="False">
-                            <TextBlock Text="Output"
-                                    Margin="8"/>
+                        <avalonDock:LayoutAnchorable Title="Output" CanClose="False">
+                            <TextBlock Text="Output" Margin="8"/>
                         </avalonDock:LayoutAnchorable>
-                        <avalonDock:LayoutAnchorable Title="Error List"
-                                CanClose="False">
-                            <TextBlock Text="Error List"
-                                    Margin="8"/>
+                        <avalonDock:LayoutAnchorable Title="Error List" CanClose="False">
+                            <TextBlock Text="Error List" Margin="8"/>
                         </avalonDock:LayoutAnchorable>
                     </avalonDock:LayoutAnchorablePane>
 
