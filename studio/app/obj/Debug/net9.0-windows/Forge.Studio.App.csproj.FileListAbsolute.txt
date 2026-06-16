@@ -75,3 +75,5 @@ C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\ref\Forge.Stu
 C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Views\DesignerView.baml
 C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Views\MainWindow.baml
 C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Forge.Studio.App.g.resources
+C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Views\PreviewPane.baml
+C:\Users\chall\Desktop\Forge11\studio\app\obj\Debug\net9.0-windows\Views\PreviewPane.g.cs

@@ -4,9 +4,14 @@
         xmlns:avalonDock="https://github.com/Dirkster99/AvalonDock"
         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         xmlns:models="clr-namespace:Forge.Studio.App.Models"
+        xmlns:views="clr-namespace:Forge.Studio.App.Views"
         Title="Forge Studio"
         Height="800" Width="1280"
         WindowStartupLocation="CenterScreen">
+
+    <Window.InputBindings>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding SaveCommand}"/>
+    </Window.InputBindings>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -20,6 +25,12 @@
             <MenuItem Header="_File">
                 <MenuItem Header="_New Project"/>
                 <MenuItem Header="_Open .f11 Layout..." Command="{Binding OpenFileCommand}"/>
+                <Separator/>
+                <MenuItem Header="_Save"
+                          Command="{Binding SaveCommand}"
+                          InputGestureText="Ctrl+S"/>
+                <MenuItem Header="Save _As..."
+                          Command="{Binding SaveAsCommand}"/>
                 <Separator/>
                 <MenuItem Header="E_xit"/>
             </MenuItem>
@@ -74,7 +85,7 @@
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
 
-                        <!-- CENTER: Designer + Code tabs -->
+                        <!-- CENTER: Designer + Code + Preview tabs -->
                         <avalonDock:LayoutDocumentPane>
 
                             <!-- DESIGNER tab -->
@@ -160,6 +171,13 @@
                                                        TextWrapping="Wrap"/>
                                         </Grid>
                                     </ContentControl>
+                                </avalonDock:LayoutDocument.Content>
+                            </avalonDock:LayoutDocument>
+
+                            <!-- PREVIEW tab -->
+                            <avalonDock:LayoutDocument Title="Preview" CanClose="False">
+                                <avalonDock:LayoutDocument.Content>
+                                    <views:PreviewPane/>
                                 </avalonDock:LayoutDocument.Content>
                             </avalonDock:LayoutDocument>
 

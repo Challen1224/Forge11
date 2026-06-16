@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Windows.Media;
 using System.Xml;
@@ -13,13 +14,19 @@ namespace Forge.Studio.App.ViewModels;
 
 public partial class DesignerViewModel : ObservableObject
 {
-    [ObservableProperty] private string _filePath    = string.Empty;
-    [ObservableProperty] private string _fileName    = "Untitled.f11";
-    [ObservableProperty] private double _canvasWidth  = 800;
-    [ObservableProperty] private double _canvasHeight = 600;
+    [ObservableProperty] private string           _filePath     = string.Empty;
+    [ObservableProperty] private string           _fileName     = "Untitled.f11";
+    [ObservableProperty] private double           _canvasWidth  = 800;
+    [ObservableProperty] private double           _canvasHeight = 600;
     [ObservableProperty] private DesignerElement? _selectedElement;
-    [ObservableProperty] private string _xmlSource   = string.Empty;
-    [ObservableProperty] private string _xmlError    = string.Empty;
+    [ObservableProperty] private string           _xmlSource    = string.Empty;
+    [ObservableProperty] private string           _xmlError     = string.Empty;
+    [ObservableProperty] private string           _statusText   = string.Empty;
+    [ObservableProperty] private bool             _isDirty      = false;
+
+    private bool _isLoading = false;
+
+    public string TabTitle => IsDirty ? $"{FileName} *" : FileName;
 
     public ObservableCollection<F11TreeNode>     RootNodes  { get; } = new();
     public ObservableCollection<DesignerElement> Elements   { get; } = new();
@@ -30,10 +37,49 @@ public partial class DesignerViewModel : ObservableObject
     // ------------------------------------------------------------------ //
     public void LoadFile(string path)
     {
-        FilePath = path;
-        FileName = Path.GetFileName(path);
-        XmlSource = File.ReadAllText(path, Encoding.UTF8);
-        ReloadFromXml(XmlSource);
+        _isLoading = true;
+        FilePath   = path;
+        FileName   = Path.GetFileName(path);
+        XmlSource  = File.ReadAllText(path, Encoding.UTF8);
+        ReloadFromXml(XmlSource, markDirty: false);
+        IsDirty    = false;
+        _isLoading = false;
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Save
+    // ------------------------------------------------------------------ //
+    [RelayCommand]
+    public void Save()
+    {
+        if (string.IsNullOrEmpty(FilePath))
+        {
+            SaveAs();
+            return;
+        }
+
+        File.WriteAllText(FilePath, XmlSource, Encoding.UTF8);
+        IsDirty    = false;
+        StatusText = $"Saved {FileName}";
+    }
+
+    [RelayCommand]
+    public void SaveAs()
+    {
+        var dialog = new Microsoft.Win32.SaveFileDialog
+        {
+            Filter   = "Forge11 Layout (*.f11)|*.f11|All files (*.*)|*.*",
+            Title    = "Save .f11 Layout",
+            FileName = FileName
+        };
+
+        if (dialog.ShowDialog() != true) return;
+
+        FilePath   = dialog.FileName;
+        FileName   = Path.GetFileName(dialog.FileName);
+        File.WriteAllText(FilePath, XmlSource, Encoding.UTF8);
+        IsDirty    = false;
+        StatusText = $"Saved {FileName}";
     }
 
     // ------------------------------------------------------------------ //
@@ -59,9 +105,45 @@ public partial class DesignerViewModel : ObservableObject
             {
                 element.Node.Attributes[item.Key] = item.Value;
                 XmlSource = SerializeToXml(RootNodes[0]);
+                IsDirty   = true;
             };
             Properties.Add(item);
         }
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Delete selected node
+    // ------------------------------------------------------------------ //
+    [RelayCommand]
+    public void DeleteSelectedNode()
+    {
+        if (SelectedElement == null) return;
+        if (RootNodes.Count == 0) return;
+
+        var target = SelectedElement.Node;
+
+        if (RootNodes[0] == target) return;
+
+        if (RemoveNode(RootNodes[0], target))
+        {
+            XmlSource = SerializeToXml(RootNodes[0]);
+            ReloadFromXml(XmlSource);
+        }
+    }
+
+    private static bool RemoveNode(F11TreeNode parent, F11TreeNode target)
+    {
+        for (int i = 0; i < parent.Children.Count; i++)
+        {
+            if (parent.Children[i] == target)
+            {
+                parent.Children.RemoveAt(i);
+                return true;
+            }
+            if (RemoveNode(parent.Children[i], target))
+                return true;
+        }
+        return false;
     }
 
     // ------------------------------------------------------------------ //
@@ -75,32 +157,25 @@ public partial class DesignerViewModel : ObservableObject
         foreach (var kvp in item.DefaultAttributes)
             newNode.Attributes[kvp.Key] = kvp.Value;
 
-        // Find drop target's parent panel, or fall back to first Panel child of root.
         F11TreeNode? parent = null;
 
         if (dropTarget != null)
-        {
             parent = FindParentPanel(RootNodes[0], dropTarget.Node);
-        }
 
         parent ??= FindFirstPanel(RootNodes[0]);
-        parent ??= RootNodes[0]; // last resort: root Window
+        parent ??= RootNodes[0];
 
         parent.Children.Add(newNode);
 
-        // Serialize and reload to rebuild elements + layout.
         XmlSource = SerializeToXml(RootNodes[0]);
         ReloadFromXml(XmlSource);
 
-        // Auto-select the new node.
         var newElement = Elements.FirstOrDefault(e => e.Node.Tag == item.Tag &&
                                                        e.Node == FindNodeByRef(RootNodes[0], newNode));
         SelectElementCommand.Execute(newElement);
 
         StatusText = $"Inserted <{item.Tag}>";
     }
-
-    [ObservableProperty] private string _statusText = string.Empty;
 
     private static F11TreeNode? FindParentPanel(F11TreeNode root, F11TreeNode target)
     {
@@ -142,13 +217,14 @@ public partial class DesignerViewModel : ObservableObject
     [RelayCommand]
     public void ApplyXml(string xml)
     {
-        ReloadFromXml(xml);
+        XmlSource = xml;
+        ReloadFromXml(xml, markDirty: true);
     }
 
     // ------------------------------------------------------------------ //
     //  Internal helpers
     // ------------------------------------------------------------------ //
-    private void ReloadFromXml(string xml)
+    private void ReloadFromXml(string xml, bool markDirty = true)
     {
         XmlError = string.Empty;
 
@@ -162,6 +238,9 @@ public partial class DesignerViewModel : ObservableObject
 
             RootNodes.Add(root);
             BuildElements(root);
+
+            if (markDirty && !_isLoading)
+                IsDirty = true;
         }
         catch (Exception ex)
         {
@@ -173,8 +252,8 @@ public partial class DesignerViewModel : ObservableObject
     {
         double width  = ParseAttr(root, "Width",  800);
         double height = ParseAttr(root, "Height", 600);
-        CanvasWidth  = width;
-        CanvasHeight = height;
+        CanvasWidth   = width;
+        CanvasHeight  = height;
 
         var solver = new LayoutSolver();
         solver.Solve(root, new LayoutRect { X = 0, Y = 0, Width = width, Height = height });
@@ -188,49 +267,37 @@ public partial class DesignerViewModel : ObservableObject
         var rect = solver.RectFor(node);
         Elements.Add(new DesignerElement
         {
-            Node = node,
-            X = rect.X,
-            Y = rect.Y,
-            Width = rect.Width,
+            Node   = node,
+            X      = rect.X,
+            Y      = rect.Y,
+            Width  = rect.Width,
             Height = rect.Height,
-            Fill = BrushForTag(node.Tag),
-            Label = GetCanvasLabel(node)
+            Fill   = BrushForTag(node.Tag),
+            Label  = GetCanvasLabel(node)
         });
         foreach (var child in node.Children)
             AddElements(child, solver);
     }
 
-    /// <summary>
-    /// Returns the text shown on the widget rect in the designer canvas.
-    /// Shows the human-redable content (Text/Title/Name) - not raw attribute syntax.
-    /// </summary>
     private static string GetCanvasLabel(F11TreeNode node)
     {
-        // Primary: show Text or Title attribute if present.
         if (node.Attributes.TryGetValue("Text",  out var text)  && !string.IsNullOrEmpty(text))
             return text;
         if (node.Attributes.TryGetValue("Title", out var title) && !string.IsNullOrEmpty(title))
             return title;
-
-        // Secondary: show Name attribute.
         if (node.Attributes.TryGetValue("Name",  out var name)  && !string.IsNullOrEmpty(name))
             return name;
-
-        // Fallback: just the tag.
         return node.Tag;
     }
 
-    // ------------------------------------------------------------------ //
-    //  XML serializer (F11TreeNode → pretty-printed XML string)
-    // ------------------------------------------------------------------ //
     private static string SerializeToXml(F11TreeNode root)
     {
-        var sb = new StringBuilder();
+        var sb       = new StringBuilder();
         var settings = new XmlWriterSettings
         {
-            Indent = true,
-            IndentChars = "    ",
-            Encoding = Encoding.UTF8,
+            Indent             = true,
+            IndentChars        = "    ",
+            Encoding           = Encoding.UTF8,
             OmitXmlDeclaration = true
         };
 
@@ -250,9 +317,6 @@ public partial class DesignerViewModel : ObservableObject
         writer.WriteEndElement();
     }
 
-    // ------------------------------------------------------------------ //
-    //  Misc helpers
-    // ------------------------------------------------------------------ //
     private static double ParseAttr(F11TreeNode node, string name, double fallback)
     {
         if (node.Attributes.TryGetValue(name, out var v) &&
@@ -268,4 +332,7 @@ public partial class DesignerViewModel : ObservableObject
         "Button" => new SolidColorBrush(Color.FromRgb(77,  179, 77)),
         _        => new SolidColorBrush(Color.FromRgb(102, 102, 102))
     };
+
+    partial void OnIsDirtyChanged(bool value)    => OnPropertyChanged(nameof(TabTitle));
+    partial void OnFileNameChanged(string value)  => OnPropertyChanged(nameof(TabTitle));
 }

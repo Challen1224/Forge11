@@ -1,16 +1,14 @@
 using System.Windows;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Forge.Studio.App.Models;
-using Forge.Studio.App.ViewModels;
 using Forge.Studio.Bridge;
 
 namespace Forge.Studio.App.ViewModels;
 
 public partial class MainWindowViewModel : ObservableObject
 {
-    [ObservableProperty] private string           _statusText     = "Ready";
-    [ObservableProperty] private string           _title          = "Forge Studio";
+    [ObservableProperty] private string            _statusText     = "Ready";
+    [ObservableProperty] private string            _title          = "Forge Studio";
     [ObservableProperty] private DesignerViewModel _activeDocument = new();
 
     public ToolboxViewModel Toolbox { get; } = new();
@@ -32,6 +30,9 @@ public partial class MainWindowViewModel : ObservableObject
         }
     }
 
+    // ------------------------------------------------------------------ //
+    //  File commands
+    // ------------------------------------------------------------------ //
     [RelayCommand]
     private void OpenFile()
     {
@@ -50,5 +51,19 @@ public partial class MainWindowViewModel : ObservableObject
 
         if (Application.Current.MainWindow is Views.MainWindow win)
             win.SyncEditor();
+    }
+
+    [RelayCommand]
+    private void Save()
+    {
+        ActiveDocument.Save();
+        StatusText = ActiveDocument.StatusText;
+    }
+
+    [RelayCommand]
+    private void SaveAs()
+    {
+        ActiveDocument.SaveAs();
+        StatusText = ActiveDocument.StatusText;
     }
 }

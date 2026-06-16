@@ -10,19 +10,37 @@ namespace Forge.Studio.App.Views;
 
 public partial class MainWindow : Window
 {
-    private TextEditor? _xmlEditor;
+    private TextEditor?  _xmlEditor;
     private ToolboxItem? _draggingItem;
 
     public MainWindow()
     {
         InitializeComponent();
         DataContext = new MainWindowViewModel();
+        KeyDown += MainWindow_KeyDown;
     }
 
     private MainWindowViewModel? VM => DataContext as MainWindowViewModel;
 
     // ------------------------------------------------------------------ //
-    //  AvalonEdit loads inside AvalonDock — capture reference here
+    //  Delete key
+    // ------------------------------------------------------------------ //
+    private void MainWindow_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Delete) return;
+        if (Keyboard.FocusedElement is TextBox) return;
+        if (Keyboard.FocusedElement is ICSharpCode.AvalonEdit.Editing.TextArea) return;
+
+        if (VM?.ActiveDocument is not { } doc) return;
+        if (doc.SelectedElement == null) return;
+
+        doc.DeleteSelectedNodeCommand.Execute(null);
+        e.Handled = true;
+        SyncEditor();
+    }
+
+    // ------------------------------------------------------------------ //
+    //  AvalonEdit — capture reference on Loaded
     // ------------------------------------------------------------------ //
     private void XmlEditor_Loaded(object sender, RoutedEventArgs e)
     {
@@ -43,7 +61,7 @@ public partial class MainWindow : Window
     }
 
     // ------------------------------------------------------------------ //
-    //  Tree selection → select matching canvas element
+    //  Tree selection → canvas selection
     // ------------------------------------------------------------------ //
     private void TreeView_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
     {
@@ -54,7 +72,7 @@ public partial class MainWindow : Window
     }
 
     // ------------------------------------------------------------------ //
-    //  Apply button — take editor text, reload canvas
+    //  Apply XML button
     // ------------------------------------------------------------------ //
     private void ApplyXml_Click(object sender, RoutedEventArgs e)
     {
@@ -65,29 +83,12 @@ public partial class MainWindow : Window
     }
 
     // ------------------------------------------------------------------ //
-    //  Sync editor text from view model XmlSource
-    // ------------------------------------------------------------------ //
-    internal void SyncEditor()
-    {
-        if (_xmlEditor is null) return;
-        if (VM?.ActiveDocument is { } doc)
-            _xmlEditor.Text = doc.XmlSource;
-    }
-
-    protected override void OnContentRendered(EventArgs e)
-    {
-        base.OnContentRendered(e);
-        SyncEditor();
-    }
-
-    // ------------------------------------------------------------------ //
     //  Toolbox drag
     // ------------------------------------------------------------------ //
     private void Toolbox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
     {
         if (sender is not ListBox listBox) return;
         if (listBox.SelectedItem is not ToolboxItem item) return;
-
         _draggingItem = item;
         DragDrop.DoDragDrop(listBox, item, DragDropEffects.Copy);
         _draggingItem = null;
@@ -101,12 +102,27 @@ public partial class MainWindow : Window
         if (VM?.ActiveDocument is not { } doc) return;
         if (_draggingItem is null) return;
 
-        // Find which element (if any) was dropped onto.
         DesignerElement? dropTarget = null;
         if (e.OriginalSource is FrameworkElement { DataContext: DesignerElement el })
             dropTarget = el;
 
         doc.InsertNode(_draggingItem, dropTarget);
+        SyncEditor();
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Sync AvalonEdit from XmlSource
+    // ------------------------------------------------------------------ //
+    internal void SyncEditor()
+    {
+        if (_xmlEditor is null) return;
+        if (VM?.ActiveDocument is { } doc)
+            _xmlEditor.Text = doc.XmlSource;
+    }
+
+    protected override void OnContentRendered(EventArgs e)
+    {
+        base.OnContentRendered(e);
         SyncEditor();
     }
 }

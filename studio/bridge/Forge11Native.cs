@@ -2,14 +2,13 @@ using System.Runtime.InteropServices;
 
 namespace Forge.Studio.Bridge;
 
-/// <summary>
-/// Raw P/Invoke bindings to forge11_abi.dll.
-/// Mirrors engine/include/forge11/abi/forge11_abi.h.
-/// </summary>
 public static class Forge11Native
 {
     private const string DllName = "forge11_abi.dll";
 
+    // ------------------------------------------------------------------ //
+    //  Application
+    // ------------------------------------------------------------------ //
     [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
     public static extern IntPtr forge11_app_create();
 
@@ -33,4 +32,22 @@ public static class Forge11Native
         IntPtr ptr = forge11_get_version();
         return Marshal.PtrToStringAnsi(ptr) ?? "unknown";
     }
+
+    // ------------------------------------------------------------------ //
+    //  Embedded view
+    // ------------------------------------------------------------------ //
+    [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+    public static extern IntPtr forge11_view_create(IntPtr parentHwnd, int width, int height);
+
+    [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void forge11_view_tick(IntPtr view, float r, float g, float b);
+
+    [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void forge11_view_resize(IntPtr view, int width, int height);
+
+    [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+    public static extern IntPtr forge11_view_hwnd(IntPtr view);
+
+    [DllImport(DllName, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void forge11_view_destroy(IntPtr view);
 }

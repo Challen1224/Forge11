@@ -1,0 +1,25 @@
+<UserControl x:Class="Forge.Studio.App.Views.PreviewPane"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Background="#111">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- HwndHost is added in code-behind (can't instantiate in XAML easily) -->
+        <Border Grid.Row="0"
+                x:Name="HostBorder"
+                Background="#0D0D14"
+                SizeChanged="HostBorder_SizeChanged"/>
+
+        <StatusBar Grid.Row="1" Background="#1A1A24">
+            <StatusBarItem>
+                <TextBlock Text="Forge11 Engine Preview"
+                           Foreground="#888"
+                           FontSize="11"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</UserControl>

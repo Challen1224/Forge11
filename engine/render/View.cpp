@@ -227,7 +227,7 @@ void View::tick(float r, float g, float b) {
 
     ID3D12CommandList* lists[] = {impl.commandList.Get()};
     impl.commandQueue->ExecuteCommandLists(1, lists);
-    impl.swapChain->Present(1, 0);
+    impl.swapChain->Present(0, 0);
 
     const UINT64 val = ++impl.fenceValues[idx];
     impl.commandQueue->Signal(impl.fence.Get(), val);
