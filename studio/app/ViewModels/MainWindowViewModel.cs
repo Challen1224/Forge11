@@ -1,12 +1,11 @@
+using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System.Linq;
 using Forge.Studio.Bridge;
 
 namespace Forge.Studio.App.ViewModels;
 
-/// <summary>
-/// Root view model for MainWindow. Will own docking layout state,
-/// open documents, and the active project in later phases.
-/// </summary>
 public partial class MainWindowViewModel : ObservableObject
 {
     [ObservableProperty]
@@ -15,6 +14,12 @@ public partial class MainWindowViewModel : ObservableObject
     [ObservableProperty]
     private string _title = "Forge Studio";
 
+    // ⭐ FIXED: nullable backing field so CS8618 disappears
+    [ObservableProperty]
+    private DesignerViewModel? _activeDocument;
+
+    public ObservableCollection<DesignerViewModel> OpenDocuments { get; } = new();
+
     public MainWindowViewModel()
     {
         try
@@ -22,13 +27,33 @@ public partial class MainWindowViewModel : ObservableObject
             var version = Forge11Native.GetVersion();
             StatusText = $"Forge11 Engine v{version} loaded";
         }
-        catch (System.DllNotFoundException)
+        catch
         {
             StatusText = "Forge11 Engine: forge11_abi.dll not found";
         }
-        catch (System.Exception ex)
+    }
+
+    [RelayCommand]
+    private void OpenFile()
+    {
+        var dialog = new Microsoft.Win32.OpenFileDialog
         {
-            StatusText = $"Forge11 Engine: error - {ex.Message}";
+            Filter = "Forge11 Layout (*.f11)|*.f11|All files (*.*)|*.*",
+            Title = "Open .f11 Layout"
+        };
+
+        if (dialog.ShowDialog() == true)
+        {
+            var docVm = new DesignerViewModel();
+            docVm.LoadFile(dialog.FileName);
+
+            OpenDocuments.Add(docVm);
+
+            // ⭐ CRITICAL: this makes the designer show the file
+            ActiveDocument = docVm;
+
+            StatusText =
+                $"Opened {docVm.FileName} - {docVm.RootNodes.Count} root node(s), tag={docVm.RootNodes.FirstOrDefault()?.Tag}";
         }
     }
 }

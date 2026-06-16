@@ -10,10 +10,10 @@
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\5.3.0-2.25625.1\\microsoft.codeanalysis.analyzers.5.3.0-2.25625.1.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.codeanalysis.common\\5.3.0\\microsoft.codeanalysis.common.5.3.0.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.codeanalysis.csharp\\5.3.0\\microsoft.codeanalysis.csharp.5.3.0.nupkg.sha512",
-    "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.16\\microsoft.aspnetcore.app.ref.9.0.16.nupkg.sha512",
-    "C:\\Users\\chall\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.16\\microsoft.netcore.app.host.win-x64.9.0.16.nupkg.sha512",
     "C:\\Users\\chall\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.16\\microsoft.netcore.app.ref.9.0.16.nupkg.sha512",
-    "C:\\Users\\chall\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.16\\microsoft.windowsdesktop.app.ref.9.0.16.nupkg.sha512"
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.16\\microsoft.windowsdesktop.app.ref.9.0.16.nupkg.sha512",
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.16\\microsoft.aspnetcore.app.ref.9.0.16.nupkg.sha512",
+    "C:\\Users\\chall\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.16\\microsoft.netcore.app.host.win-x64.9.0.16.nupkg.sha512"
   ],
   "logs": []
 }

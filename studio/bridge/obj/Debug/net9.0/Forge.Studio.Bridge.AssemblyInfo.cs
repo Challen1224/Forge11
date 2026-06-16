@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Forge.Studio.Bridge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0666cca7db74ed16393a0173ab02739c2b4e6062")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc25aaa96e36df437bf3c5e742af1227cbe4759a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Forge.Studio.Bridge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Forge.Studio.Bridge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
