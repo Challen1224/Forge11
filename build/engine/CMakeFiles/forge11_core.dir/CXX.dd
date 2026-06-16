@@ -3,7 +3,11 @@ build engine\CMakeFiles\forge11_core.dir\core\Application.cpp.obj: dyndep
 
 build engine\CMakeFiles\forge11_core.dir\platform\win32\Win32Window.cpp.obj: dyndep
 
+build engine\CMakeFiles\forge11_core.dir\platform\win32\Win32ChildWindow.cpp.obj: dyndep
+
 build engine\CMakeFiles\forge11_core.dir\render\Renderer.cpp.obj: dyndep
+
+build engine\CMakeFiles\forge11_core.dir\render\View.cpp.obj: dyndep
 
 build engine\CMakeFiles\forge11_core.dir\ui\dsl\F11Parser.cpp.obj: dyndep
 

@@ -1,8 +1,5 @@
 #pragma once
 
-// C ABI surface for Forge11. Stable, versioned entry points consumed by
-// non-C++ hosts (e.g. Forge Studio via C# P/Invoke).
-
 #ifdef _WIN32
   #ifdef FORGE11_BUILD_DLL
     #define FORGE11_API extern "C" __declspec(dllexport)
@@ -13,26 +10,40 @@
   #define FORGE11_API extern "C"
 #endif
 
-/// Opaque handle to a Forge11 Application instance.
 typedef void* Forge11AppHandle;
+typedef void* Forge11ViewHandle;
 
-/// Creates a new Application instance. Returns nullptr on failure.
+// ------------------------------------------------------------------ //
+//  Application
+// ------------------------------------------------------------------ //
 FORGE11_API Forge11AppHandle forge11_app_create();
+FORGE11_API int              forge11_app_initialize(Forge11AppHandle app,
+                                                     const wchar_t*   title,
+                                                     int width, int height);
+FORGE11_API int              forge11_app_run(Forge11AppHandle app);
+FORGE11_API void             forge11_app_quit(Forge11AppHandle app);
+FORGE11_API void             forge11_app_destroy(Forge11AppHandle app);
+FORGE11_API const char*      forge11_get_version();
 
-/// Initializes the primary window. Returns 1 on success, 0 on failure.
-FORGE11_API int forge11_app_initialize(Forge11AppHandle app,
-                                        const wchar_t* title,
-                                        int width,
-                                        int height);
+// ------------------------------------------------------------------ //
+//  Embedded view (child HWND + D3D12 renderer, driven by host)
+// ------------------------------------------------------------------ //
 
-/// Runs the message loop. Blocks until quit. Returns process exit code.
-FORGE11_API int forge11_app_run(Forge11AppHandle app);
+/// Creates a Win32 child window + D3D12 renderer inside parentHwnd.
+/// Returns nullptr on failure.
+FORGE11_API Forge11ViewHandle forge11_view_create(void* parentHwnd,
+                                                   int width, int height);
 
-/// Requests application shutdown.
-FORGE11_API void forge11_app_quit(Forge11AppHandle app);
+/// Renders one frame (clear color for now). Call each frame from host.
+FORGE11_API void forge11_view_tick(Forge11ViewHandle view,
+                                    float r, float g, float b);
 
-/// Destroys the Application instance and frees all resources.
-FORGE11_API void forge11_app_destroy(Forge11AppHandle app);
+/// Resizes the swap chain when the host window resizes.
+FORGE11_API void forge11_view_resize(Forge11ViewHandle view,
+                                      int width, int height);
 
-/// Returns the Forge11 engine version string (e.g. "0.1.0").
-FORGE11_API const char* forge11_get_version();
+/// Returns the child HWND (as void*) so WPF HwndHost can return it.
+FORGE11_API void* forge11_view_hwnd(Forge11ViewHandle view);
+
+/// Destroys the view and releases all D3D12 resources.
+FORGE11_API void forge11_view_destroy(Forge11ViewHandle view);

@@ -26,6 +26,11 @@
 			"language" : "CXX",
 			"source" : "C:/Users/chall/Desktop/Forge11/engine/core/Application.cpp"
 		},
+		"engine/CMakeFiles/forge11_core.dir/platform/win32/Win32ChildWindow.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/chall/Desktop/Forge11/engine/platform/win32/Win32ChildWindow.cpp"
+		},
 		"engine/CMakeFiles/forge11_core.dir/platform/win32/Win32Window.cpp.obj" : 
 		{
 			"language" : "CXX",
@@ -35,6 +40,11 @@
 		{
 			"language" : "CXX",
 			"source" : "C:/Users/chall/Desktop/Forge11/engine/render/Renderer.cpp"
+		},
+		"engine/CMakeFiles/forge11_core.dir/render/View.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/chall/Desktop/Forge11/engine/render/View.cpp"
 		},
 		"engine/CMakeFiles/forge11_core.dir/ui/WidgetFactory.cpp.obj" : 
 		{

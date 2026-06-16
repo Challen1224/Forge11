@@ -13,9 +13,21 @@
 },
 {
   "directory": "C:/Users/chall/Desktop/Forge11/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DUNICODE -D_UNICODE -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\forge11_core.dir\\platform\\win32\\Win32ChildWindow.cpp.obj.modmap /Foengine\\CMakeFiles\\forge11_core.dir\\platform\\win32\\Win32ChildWindow.cpp.obj /Fdengine\\CMakeFiles\\forge11_core.dir\\forge11_core.pdb /FS -c C:\\Users\\chall\\Desktop\\Forge11\\engine\\platform\\win32\\Win32ChildWindow.cpp",
+  "file": "C:/Users/chall/Desktop/Forge11/engine/platform/win32/Win32ChildWindow.cpp",
+  "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir/platform/win32/Win32ChildWindow.cpp.obj"
+},
+{
+  "directory": "C:/Users/chall/Desktop/Forge11/build",
   "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DUNICODE -D_UNICODE -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\forge11_core.dir\\render\\Renderer.cpp.obj.modmap /Foengine\\CMakeFiles\\forge11_core.dir\\render\\Renderer.cpp.obj /Fdengine\\CMakeFiles\\forge11_core.dir\\forge11_core.pdb /FS -c C:\\Users\\chall\\Desktop\\Forge11\\engine\\render\\Renderer.cpp",
   "file": "C:/Users/chall/Desktop/Forge11/engine/render/Renderer.cpp",
   "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir/render/Renderer.cpp.obj"
+},
+{
+  "directory": "C:/Users/chall/Desktop/Forge11/build",
+  "command": "C:\\PROGRA~1\\MICROS~2\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1451~1.362\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DUNICODE -D_UNICODE -IC:\\Users\\chall\\Desktop\\Forge11\\engine\\include /DWIN32 /D_WINDOWS /EHsc /Ob0 /Od /RTC1 -std:c++latest -MDd -Zi /W4 @engine\\CMakeFiles\\forge11_core.dir\\render\\View.cpp.obj.modmap /Foengine\\CMakeFiles\\forge11_core.dir\\render\\View.cpp.obj /Fdengine\\CMakeFiles\\forge11_core.dir\\forge11_core.pdb /FS -c C:\\Users\\chall\\Desktop\\Forge11\\engine\\render\\View.cpp",
+  "file": "C:/Users/chall/Desktop/Forge11/engine/render/View.cpp",
+  "output": "C:/Users/chall/Desktop/Forge11/build/engine/CMakeFiles/forge11_core.dir/render/View.cpp.obj"
 },
 {
   "directory": "C:/Users/chall/Desktop/Forge11/build",
