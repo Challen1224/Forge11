@@ -1,7 +1,9 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Windows.Media;
+using System.Xml;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Forge.Studio.App.Models;
@@ -11,30 +13,32 @@ namespace Forge.Studio.App.ViewModels;
 
 public partial class DesignerViewModel : ObservableObject
 {
-    [ObservableProperty] private string _filePath  = string.Empty;
-    [ObservableProperty] private string _fileName  = "Untitled.f11";
+    [ObservableProperty] private string _filePath    = string.Empty;
+    [ObservableProperty] private string _fileName    = "Untitled.f11";
     [ObservableProperty] private double _canvasWidth  = 800;
     [ObservableProperty] private double _canvasHeight = 600;
     [ObservableProperty] private DesignerElement? _selectedElement;
+    [ObservableProperty] private string _xmlSource   = string.Empty;
+    [ObservableProperty] private string _xmlError    = string.Empty;
 
-    public ObservableCollection<F11TreeNode>    RootNodes  { get; } = new();
-    public ObservableCollection<DesignerElement> Elements  { get; } = new();
-    public ObservableCollection<AttributeItem>  Properties { get; } = new();
+    public ObservableCollection<F11TreeNode>     RootNodes  { get; } = new();
+    public ObservableCollection<DesignerElement> Elements   { get; } = new();
+    public ObservableCollection<AttributeItem>   Properties { get; } = new();
 
+    // ------------------------------------------------------------------ //
+    //  Load
+    // ------------------------------------------------------------------ //
     public void LoadFile(string path)
     {
         FilePath = path;
         FileName = Path.GetFileName(path);
-        RootNodes.Clear();
-        Elements.Clear();
-        Properties.Clear();
-        SelectedElement = null;
-
-        var root = F11XmlLoader.LoadFromFile(path);
-        RootNodes.Add(root);
-        BuildElements(root);
+        XmlSource = File.ReadAllText(path, Encoding.UTF8);
+        ReloadFromXml(XmlSource);
     }
 
+    // ------------------------------------------------------------------ //
+    //  Selection
+    // ------------------------------------------------------------------ //
     [RelayCommand]
     public void SelectElement(DesignerElement? element)
     {
@@ -54,8 +58,42 @@ public partial class DesignerViewModel : ObservableObject
             item.ValueChanged += (_, _) =>
             {
                 element.Node.Attributes[item.Key] = item.Value;
+                XmlSource = SerializeToXml(RootNodes[0]);
             };
             Properties.Add(item);
+        }
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Code editor → canvas sync
+    // ------------------------------------------------------------------ //
+    [RelayCommand]
+    public void ApplyXml(string xml)
+    {
+        ReloadFromXml(xml);
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Internal helpers
+    // ------------------------------------------------------------------ //
+    private void ReloadFromXml(string xml)
+    {
+        XmlError = string.Empty;
+
+        try
+        {
+            var root = F11XmlLoader.LoadFromString(xml);
+            RootNodes.Clear();
+            Elements.Clear();
+            Properties.Clear();
+            SelectedElement = null;
+
+            RootNodes.Add(root);
+            BuildElements(root);
+        }
+        catch (Exception ex)
+        {
+            XmlError = ex.Message;
         }
     }
 
@@ -90,6 +128,39 @@ public partial class DesignerViewModel : ObservableObject
             AddElements(child, solver);
     }
 
+    // ------------------------------------------------------------------ //
+    //  XML serializer (F11TreeNode → pretty-printed XML string)
+    // ------------------------------------------------------------------ //
+    private static string SerializeToXml(F11TreeNode root)
+    {
+        var sb = new StringBuilder();
+        var settings = new XmlWriterSettings
+        {
+            Indent = true,
+            IndentChars = "    ",
+            Encoding = Encoding.UTF8,
+            OmitXmlDeclaration = true
+        };
+
+        using var writer = XmlWriter.Create(sb, settings);
+        WriteNode(writer, root);
+        writer.Flush();
+        return sb.ToString();
+    }
+
+    private static void WriteNode(XmlWriter writer, F11TreeNode node)
+    {
+        writer.WriteStartElement(node.Tag);
+        foreach (var attr in node.Attributes)
+            writer.WriteAttributeString(attr.Key, attr.Value);
+        foreach (var child in node.Children)
+            WriteNode(writer, child);
+        writer.WriteEndElement();
+    }
+
+    // ------------------------------------------------------------------ //
+    //  Misc helpers
+    // ------------------------------------------------------------------ //
     private static double ParseAttr(F11TreeNode node, string name, double fallback)
     {
         if (node.Attributes.TryGetValue(name, out var v) &&
