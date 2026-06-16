@@ -38,7 +38,8 @@
                         <!-- LEFT: Solution Explorer + Toolbox -->
                         <avalonDock:LayoutAnchorablePane DockWidth="220">
                             <avalonDock:LayoutAnchorable Title="Solution Explorer" CanClose="False">
-                                <TreeView ItemsSource="{Binding ActiveDocument.RootNodes}">
+                                <TreeView ItemsSource="{Binding ActiveDocument.RootNodes}"
+                                          SelectedItemChanged="TreeView_SelectedItemChanged">
                                     <TreeView.Resources>
                                         <HierarchicalDataTemplate DataType="{x:Type models:F11TreeNode}"
                                                                   ItemsSource="{Binding Children}">
@@ -58,7 +59,6 @@
                             <avalonDock:LayoutDocument
                                 Title="{Binding ActiveDocument.FileName}"
                                 CanClose="False">
-
                                 <avalonDock:LayoutDocument.Content>
                                     <ContentControl DataContext="{Binding ActiveDocument}">
                                         <ScrollViewer HorizontalScrollBarVisibility="Auto"
@@ -82,13 +82,17 @@
                                                         <Border Width="{Binding Width}"
                                                                 Height="{Binding Height}"
                                                                 Background="{Binding Fill}"
-                                                                BorderBrush="#444"
-                                                                BorderThickness="1">
+                                                                BorderBrush="{Binding SelectionBorder}"
+                                                                BorderThickness="2"
+                                                                Cursor="Hand"
+                                                                Tag="{Binding}"
+                                                                MouseLeftButtonDown="DesignerElement_MouseLeftButtonDown">
                                                             <TextBlock Text="{Binding Label}"
                                                                        Foreground="White"
                                                                        FontSize="11"
                                                                        Margin="4,2"
-                                                                       VerticalAlignment="Center"/>
+                                                                       VerticalAlignment="Center"
+                                                                       IsHitTestVisible="False"/>
                                                         </Border>
                                                     </DataTemplate>
                                                 </ItemsControl.ItemTemplate>
@@ -96,14 +100,32 @@
                                         </ScrollViewer>
                                     </ContentControl>
                                 </avalonDock:LayoutDocument.Content>
-
                             </avalonDock:LayoutDocument>
                         </avalonDock:LayoutDocumentPane>
 
                         <!-- RIGHT: Properties -->
                         <avalonDock:LayoutAnchorablePane DockWidth="260">
                             <avalonDock:LayoutAnchorable Title="Properties" CanClose="False">
-                                <TextBlock Text="Properties" Margin="8"/>
+                                <ItemsControl ItemsSource="{Binding ActiveDocument.Properties}"
+                                              Margin="4">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0,3">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="90"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0"
+                                                           Text="{Binding Key}"
+                                                           FontWeight="SemiBold"
+                                                           VerticalAlignment="Center"/>
+                                                <TextBox Grid.Column="1"
+                                                         Text="{Binding Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                         VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
                             </avalonDock:LayoutAnchorable>
                         </avalonDock:LayoutAnchorablePane>
 
